@@ -1,4 +1,4 @@
-name: Money-Heist PROD CICD
+name: Docker image build and push
 
 on:
   push:
