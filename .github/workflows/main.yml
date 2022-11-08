@@ -28,5 +28,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKER_HUB_USERNAME }}/$GITHUB_REPOSITORY:${{ github.run_number }}
-            ${{ secrets.DOCKER_HUB_USERNAME }}/$GITHUB_REPOSITORY:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.GITHUB_REPOSITORY }}:${{ github.run_number }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/${{ github.GITHUB_REPOSITORY }}:latest
