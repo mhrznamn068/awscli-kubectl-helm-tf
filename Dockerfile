@@ -20,10 +20,17 @@ RUN curl -LO "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_$
     && mv ./terraform /usr/local/bin/terraform \
     && rm terraform_${TF_VERSION}_linux_amd64.zip
 
+# Terragrunt
+ENV TG_VERSION="0.54.22"
+RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
+    && /home/linuxbrew/.linuxbrew/bin/brew install terragrunt
+ENV PATH "$PATH:/home/linuxbrew/.linuxbrew/bin/terragrunt"
+
 # Helm
 ENV HELM_VERSION="3.10.1"
 RUN curl -LO "https://get.helm.sh/helm-v${HELM_VERSION}-linux-amd64.tar.gz" \
     && tar -xzvf helm-v${HELM_VERSION}-linux-amd64.tar.gz \
     && mv linux-amd64/helm /usr/local/bin/helm \
     && rm helm-v${HELM_VERSION}-linux-amd64.tar.gz
+    
 
