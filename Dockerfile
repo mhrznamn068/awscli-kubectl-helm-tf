@@ -24,10 +24,10 @@ RUN curl -LO "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_$
     && rm terraform_${TF_VERSION}_linux_amd64.zip
 
 # Terragrunt
-ENV TG_VERSION="0.54.22"
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-    && /home/linuxbrew/.linuxbrew/bin/brew install terragrunt
-ENV PATH "$PATH:/home/linuxbrew/.linuxbrew/bin/terragrunt"
+ENV TG_VERSION="0.55.20"
+RUN curl -o terragrunt "https://objects.githubusercontent.com/github-production-release-asset-2e65be/59522149/28e8ee72-2df4-4704-8f99-5d607dfce652?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240329%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240329T062143Z&X-Amz-Expires=300&X-Amz-Signature=d931352b396cd18e168e84cd92b0ef595a1ce6e962e50fcf4e646f562f55026b&X-Amz-SignedHeaders=host&actor_id=38400817&key_id=0&repo_id=59522149&response-content-disposition=attachment%3B%20filename%3Dterragrunt_linux_amd64&response-content-type=application%2Foctet-stream" \
+    && chmod +x terragrunt \
+    && mv terragrunt /usr/local/bin/terragrunt
 
 # Helm
 ENV HELM_VERSION="3.10.1"
