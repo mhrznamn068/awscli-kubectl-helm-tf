@@ -3,7 +3,10 @@ FROM alpine:3.16.2
 LABEL maintainer="Aman Maharjan <mhrznamn068@gmail.com>"
 
 # Deps
-RUN apk --no-cache add bash curl jq docker-cli python3 py3-pip unzip
+RUN apk --no-cache add bash curl jq docker-cli python3 py3-pip unzip openssh-client git wget ca-certificates gnupg gettext \
+    && apk --no-cache add --virtual build-dependencies python3-dev libffi-dev openssl-dev build-base \
+    && pip3 install --upgrade pip \
+    && apk del build-dependencies
 
 # Kubectl
 RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" \
