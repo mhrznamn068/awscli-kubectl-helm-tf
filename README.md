@@ -1,3 +1,3 @@
 # awscli-kubectl-helm-tf
 
-Build docker image with Kubectl, AWS CLI, HELM and Terraform
+Docker image with Kubectl, AWS CLI, HELM, Terraform and Vault Client
