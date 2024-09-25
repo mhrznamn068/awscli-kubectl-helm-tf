@@ -1,4 +1,4 @@
-FROM alpine:3.20.3
+FROM alpine:latest
 
 LABEL maintainer="Aman Maharjan <mhrznamn068@gmail.com>"
 
