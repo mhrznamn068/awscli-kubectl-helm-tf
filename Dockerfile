@@ -19,10 +19,10 @@ RUN apk --no-cache add bash curl jq docker-cli python3 py3-pip unzip openssh-cli
     && mv ./kubectl /usr/local/bin/kubectl \
     ## AWS CLI
     && pip install awscli --break-system-packages \
-    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-    && unzip awscliv2.zip \
-    && ./aws/install \
-    && rm awscliv2.zip \
+    #&& curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    #&& unzip awscliv2.zip \
+    #&& ./aws/install \
+    #&& rm awscliv2.zip \
     ## Terraform
     && curl -LO "https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip" \
     && unzip terraform_${TF_VERSION}_linux_amd64.zip \
