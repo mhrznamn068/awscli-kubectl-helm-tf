@@ -2,9 +2,9 @@ FROM alpine:latest
 
 LABEL maintainer="Aman Maharjan <mhrznamn068@gmail.com>"
 
-ARG TF_VERSION="1.9.5"
-ARG TG_VERSION="0.67.4"
-ARG HELM_VERSION="3.15.0"
+ARG TF_VERSION="1.12.2"
+ARG TG_VERSION="0.84.0"
+ARG HELM_VERSION="3.18.4"
 
 # Deps
 RUN apk --no-cache add bash curl jq docker-cli python3 py3-pip unzip openssh-client git wget ca-certificates gnupg gettext \
